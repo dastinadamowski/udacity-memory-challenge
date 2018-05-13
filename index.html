@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- basic info about the project -->
+  <title>Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Udacity - Project no. 3 - Epic Memory Game">
+  <meta name="author" content="Dastin Adamowski">
+  <!-- font awesome -->
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- web fonts www.cssfontstack.com -->
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Merienda+One">
+  <!-- referenced css file -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <!-- audio ToTheMoon OST -->
+  <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/95674390&color=%231b1b2f&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe>
+  <!-- start main content -->
+  <div class="container">
+    <header>
+      <h1>D.A. Memory Game</h1>
+    </header>
+
+    <!-- start score panel dashboard -->
+    <section class="score-panel">
+      <ul class="stars">
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+      </ul>
+
+      <span class="moves">0</span> Moves
+
+      <div class="timer">
+      </div>
+
+      <div class="restart" onclick=startNewGame()>
+        <i class="fa fa-repeat"></i>
+
+      </div>
+    </section>
+    <!-- end score panel dashboard -->
+
+    <!-- start game board -->
+    <ul id="card-deck">
+      <li class="card" type="FontAwesome diamond">
+        <i class="fa fa-diamond"></i>
+      </li>
+      <li class="card" type="FontAwesome plane">
+        <i class="fa fa-paper-plane-o"></i>
+      </li>
+      <li class="card match" type="FontAwesome anchor">
+        <i class="fa fa-anchor"></i>
+      </li>
+      <li class="card" type="FontAwesome bolt">
+        <i class="fa fa-bolt"></i>
+      </li>
+      <li class="card" type="FontAwesome cube">
+        <i class="fa fa-cube"></i>
+      </li>
+      <li class="card match" type="FontAwesome anchor">
+        <i class="fa fa-anchor"></i>
+      </li>
+      <li class="card" type="FontAwesome leaf">
+        <i class="fa fa-leaf"></i>
+      </li>
+      <li class="card" type="FontAwesome wifi">
+        <i class="fa fa-wifi"></i>
+      </li>
+      <li class="card" type="FontAwesome diamond">
+        <i class="fa fa-diamond"></i>
+      </li>
+      <li class="card" type="FontAwesome space-shuttle">
+        <i class="fa fa-space-shuttle"></i>
+      </li>
+      <li class="card" type="FontAwesome leaf">
+        <i class="fa fa-leaf"></i>
+      </li>
+      <li class="card" type="FontAwesome space-shuttle">
+        <i class="fa fa-space-shuttle"></i>
+      </li>
+      <li class="card open show" type="FontAwesome bolt">
+        <i class="fa fa-bolt"></i>
+      </li>
+      <li class="card" type="FontAwesome wifi">
+        <i class="fa fa-wifi"></i>
+      </li>
+      <li class="card" type="FontAwesome plane">
+        <i class="fa fa-paper-plane-o"></i>
+      </li>
+      <li class="card" type="FontAwesome cube">
+        <i class="fa fa-cube"></i>
+      </li>
+    </ul>
+    <!-- end game board -->
+    <!-- end main content -->
+
+    <!-- game won message start / modal-->
+    <div id="pop-up-window" class="overlay">
+      <div class="message">
+        <h2>Congratulations 💪💪🎀🎀🕹️🕹️🏆🏆</h2>
+        <a class="close-window" href=#>×</a>
+        <div class="content-1st">
+          <p>Well done my friend! You won!</p>
+          <blockquote cite="https://www.inc.com/jayson-demers/51-quotes-to-inspire-success-in-your-life-and-business.html">
+            "Success seems to be connected with action. Successful people keep moving.
+            <br>They make mistakes, but they <strong>don't quit</strong>."</br>
+          </blockquote>
+        </div>
+        <div class="content-2nd">
+          <p>You made <strong><span id=totalMoves></span> moves </strong></p>
+          <p>in <strong><span id=totalTime></span></strong> </p>
+          <p>Rating: <span id=starRating></span></p>
+        </div>
+        <button id="new-game" onclick="playAgain()">
+                    Let's play again 🤠</a>
+                </button>
+        <!-- game won message end / modal -->
+      </div>
+      <!-- referenced javascript file -->
+      <script src="js/app.js"></script>
+</body>
+
+</html>
