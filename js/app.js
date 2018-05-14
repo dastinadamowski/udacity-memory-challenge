@@ -1,7 +1,7 @@
 
 // create array that holds all cards
 let card = document.getElementsByClassName("card");
-let cards = [...card]
+let cards = [...card];
 console.log(cards);
 
 // define deck that consists of all cards in game
@@ -24,7 +24,7 @@ let starsList = document.querySelectorAll(".stars li");
 let closeIcon = document.querySelector(".close-window");
 
 // declare modal / won game message
-let modal = document.getElementById("pop-up-window")
+let modal = document.getElementById("pop-up-window");
 
 // array for opened cards
 var openedCards = [];
@@ -82,7 +82,7 @@ var displayCard = function() {
   this.classList.toggle("open");
   this.classList.toggle("show");
   this.classList.toggle("disabled");
-};
+}
 
 // add opened cards to OpenedCards list and check if cards are match or not
 function cardOpen() {
@@ -96,7 +96,7 @@ function cardOpen() {
       unmatched();
     }
   }
-};
+}
 
 // when cards match
 function matched() {
@@ -166,7 +166,7 @@ function moveCounter() {
 }
 
 // game timer
-var second = 0,
+var second = 0;
   minute = 0;
 hour = 0;
 var timer = document.querySelector(".timer");
@@ -206,7 +206,7 @@ function congratulations() {
 
     //close icon on modal
     closeModal();
-  };
+  }
 }
 
 // close icon on modal
@@ -229,4 +229,4 @@ for (var i = 0; i < cards.length; i++) {
   card.addEventListener("click", displayCard);
   card.addEventListener("click", cardOpen);
   card.addEventListener("click", congratulations);
-};
+}
