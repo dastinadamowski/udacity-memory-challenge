@@ -2,7 +2,6 @@
 // create array that holds all cards
 let card = document.getElementsByClassName("card");
 let cards = [...card];
-console.log(cards);
 
 // define deck that consists of all cards in game
 const deck = document.getElementById("card-deck");
