@@ -26,11 +26,11 @@ let closeIcon = document.querySelector(".close-window");
 let modal = document.getElementById("pop-up-window");
 
 // array for opened cards
-var openedCards = [];
+let openedCards = [];
 
 // shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-  var currentIndex = array.length,
+  let currentIndex = array.length,
     temporaryValue, randomIndex;
 
   while (currentIndex !== 0) {
@@ -51,8 +51,9 @@ document.body.onload = startNewGame();
 function startNewGame() {
   // shuffle deck
   cards = shuffle(cards);
+
   // remove all exisiting classes from each card
-  for (var i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     deck.innerHTML = "";
     [].forEach.call(cards, function(item) {
       deck.appendChild(item);
@@ -63,7 +64,7 @@ function startNewGame() {
   moves = 0;
   counter.innerHTML = moves;
   // reset rating
-  for (var i = 0; i < stars.length; i++) {
+  for (let i = 0; i < stars.length; i++) {
     stars[i].style.color = "#FFD700";
     stars[i].style.visibility = "visible";
   }
@@ -71,13 +72,13 @@ function startNewGame() {
   second = 0;
   minute = 0;
   hour = 0;
-  var timer = document.querySelector(".timer");
+  const timer = document.querySelector(".timer");
   timer.innerHTML = "0 mins 0 secs";
   clearInterval(interval);
 }
 
 // toggles open and show class to display cards
-var displayCard = function() {
+const displayCard = function() {
   this.classList.toggle("open");
   this.classList.toggle("show");
   this.classList.toggle("disabled");
@@ -86,7 +87,7 @@ var displayCard = function() {
 // add opened cards to OpenedCards list and check if cards are match or not
 function cardOpen() {
   openedCards.push(this);
-  var len = openedCards.length;
+  let len = openedCards.length;
   if (len === 2) {
     moveCounter();
     if (openedCards[0].type === openedCards[1].type) {
@@ -131,7 +132,7 @@ function disable() {
 function enable() {
   Array.prototype.filter.call(cards, function(card) {
     card.classList.remove('disabled');
-    for (var i = 0; i < matchedCards.length; i++) {
+    for (let i = 0; i < matchedCards.length; i++) {
       matchedCards[i].classList.add("disabled");
     }
   });
@@ -168,7 +169,7 @@ function moveCounter() {
 var second = 0;
   minute = 0;
 hour = 0;
-var timer = document.querySelector(".timer");
+const timer = document.querySelector(".timer");
 var interval;
 
 function startTimer() {
@@ -196,7 +197,7 @@ function congratulations() {
     modal.classList.add("show");
 
     // declare star rating variable
-    var starRating = document.querySelector(".stars").innerHTML;
+    const starRating = document.querySelector(".stars").innerHTML;
 
     //showing move, rating, time on modal
     document.getElementById("totalMoves").innerHTML = moves;
@@ -223,7 +224,7 @@ function playAgain() {
 }
 
 // loop to add event listeners to each card
-for (var i = 0; i < cards.length; i++) {
+for (let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener("click", displayCard);
   card.addEventListener("click", cardOpen);
